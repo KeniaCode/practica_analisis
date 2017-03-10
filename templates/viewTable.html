@@ -1,0 +1,53 @@
+{% extends "principal.html" %}
+{% block content %}
+
+  <table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>x</th>
+      <th>VIEWS</th>
+      <th><a href="/munAgregar">Agregar</a></th>
+      <th><a href="/munEliminarEditar">Eliminar</a></th>
+      <th><a href="/munEliminarEditar">Editar</a></th>
+      <th><a href="/munVer">Ver</a></th>
+    </tr>
+  </thead>
+</table>
+
+<div>
+    <form method="POST">
+  
+        <div class="login-header margin-bottom-30">
+            <h2>Ver Tabla</h2>
+        </div>
+
+        <div class="input-group margin-bottom-20">
+       
+            <button class="btn btn-primary pull-right" type="submit" name="VER">ver</button>
+        <SELECT NAME="idCombo" class="form-control" SIZE=1 >
+            <OPTION >Seleccione ID Partido</OPTION> 
+            <OPTION >Seleccione ID Pais</OPTION>
+            <OPTION >Seleccione ID Region</OPTION>
+            <OPTION >Seleccione ID Departamento</OPTION>
+            <OPTION >Seleccione ID Municipio</OPTION>
+            <OPTION >Seleccione ID Etnia</OPTION>
+            <OPTION >Seleccione ID Eleccion</OPTION>
+            <OPTION >Seleccione ID PP_ELECCION</OPTION>
+            <OPTION >Seleccione ID Resultado</OPTION>
+
+
+        </SELECT>
+        
+        </div>
+    
+
+     
+
+            <textarea rows="10000" cols="155">
+                                        {{consulta}}
+                                        </textarea>
+    </form>
+</div>
+
+
+{% endblock %}

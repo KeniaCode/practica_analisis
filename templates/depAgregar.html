@@ -1,0 +1,33 @@
+{% extends "principal.html" %}
+{% block content %}
+	<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>4</th>
+      <th>DEPARTAMENTO</th>
+      <th><a href="/depAgregar">Agregar</a></th>
+      <th><a href="/depEliminarEditar">Eliminar</a></th>
+      <th><a href="/depEliminarEditar">Editar</a></th>
+      <th><a href="/depVer">Ver</a></th>
+    </tr>
+  </thead>
+</table>
+
+
+<form action="" method="POST">
+
+  <fieldset class="form-group">
+    <label for="formGroupExampleInput">Nombre</label>
+    <input type="text" class="form-control" placeholder="nombre" name="nombre_pais" >
+  </fieldset>
+
+
+</br>
+  <button type="submit" class="btn btn-success" name="submit" value="agregar">Agregar</button>
+
+</form>
+
+
+
+
+{% endblock %}

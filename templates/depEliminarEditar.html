@@ -1,0 +1,45 @@
+{% extends "principal.html" %}
+{% block content %}
+<meta charset="utf-8">
+	<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>4</th>
+      <th>DEPARTAMENTO</th>
+      <th><a href="/depAgregar">Agregar</a></th>
+      <th><a href="/depEliminarEditar">Eliminar</a></th>
+      <th><a href="/depEliminarEditar">Editar</a></th>
+      <th><a href="/depVer">Ver</a></th>
+    </tr>
+  </thead>
+</table>
+
+<form action="" method="POST">
+</br>
+<button type="submit" class="btn btn-info" name="submit" value="buscar">Buscar</button>
+<select class="form-control" name="idCombo">
+<option>id pais</option>
+    {%for i in l%}                                     
+    <OPTION >{{i}}</OPTION> 
+    {% endfor %} 
+    
+  </select>
+</br>
+<fieldset class="form-group">
+    <label for="formGroupExampleInput">id</label>
+    <input type="text" class="form-control" placeholder="id_pais" name="idp" value={{id_pais}} readonly>
+  </fieldset>
+
+    <label for="formGroupExampleInput">Nombre</label>
+    <input type="text" class="form-control"  placeholder="nombre_pais" name="nombre_pais" value={{nombre_pais}} >
+  </fieldset>
+
+  
+  </br>
+  </br>
+
+  <button type="submit" class="btn btn-danger"  name="submit" value="eliminar">Eliminar</button>
+  <button type="submit" class="btn btn-warning" name="submit" value="editar">Editar</button>
+</form>
+
+{% endblock %}
