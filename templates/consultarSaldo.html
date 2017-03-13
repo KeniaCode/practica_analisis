@@ -1,0 +1,40 @@
+{% extends "ingresado.html" %}
+{% block content %}
+
+<table class="table">
+    <thead class="thead-inverse">
+    <tr>
+        <th>3</th>
+        <th>Consultar saldo</th>
+        <th>No de cuenta: {{ cuentaLog }}</th>
+        <th>Usuario: {{ userLog }}</th>
+
+    </tr>
+
+    </thead>
+
+</table>
+<form action="" method="POST">
+
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">Numero de cuenta</label>
+        <input type="text" class="form-control" placeholder="noCuenta" name="noCuenta" value={{noCuenta}}>
+    </fieldset>
+
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">Saldo</label>
+        <input type="text" class="form-control" placeholder="saldo" name="saldo" value={{saldo}}>
+    </fieldset>
+
+
+    </br>
+    </br>
+
+    <button type="submit" class="btn btn-danger" name="submit" value="Refresh">Refresh</button>
+
+</form>
+
+
+{% endblock %}

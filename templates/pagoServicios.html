@@ -1,0 +1,53 @@
+{% extends "ingresado.html" %}
+{% block content %}
+
+<table class="table">
+    <thead class="thead-inverse">
+    <tr>
+        <th>1</th>
+        <th>Pago de Servicios</th>
+
+        <th>No de cuenta: {{ cuentaLog }}</th>
+        <th>Usuario: {{ userLog }}</th>
+
+    </tr>
+
+    </thead>
+
+</table>
+<form action="" method="POST">
+
+    </br>
+
+
+    <label for="formGroupExampleInput">Tipo de servicio</label>
+    <select class="form-control" name="idCombo">
+        <option>Servicio</option>
+        {%for i in l%}
+        <OPTION>{{i}}</OPTION>
+        {% endfor %}
+
+    </select>
+
+    </br>
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">Numero de cuenta del servicio</label>
+        <input type="text" class="form-control" placeholder="noCuenta" name="noCuenta" value={{noCuenta}}>
+    </fieldset>
+
+
+    <label for="formGroupExampleInput">Monto a pagar</label>
+    <input type="text" class="form-control" placeholder="montoPago" name="montoPago" value={{montoPago}}>
+    </fieldset>
+
+
+    </br>
+    </br>
+
+    <button type="submit" class="btn btn-danger" name="submit" value="Pagar">Pagar</button>
+
+</form>
+
+
+{% endblock %}

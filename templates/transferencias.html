@@ -1,0 +1,39 @@
+{% extends "ingresado.html" %}
+{% block content %}
+
+<table class="table">
+    <thead class="thead-inverse">
+    <tr>
+        <th>2</th>
+        <th>Transferencias electronicas</th>
+        <th>No de cuenta: {{ cuentaLog }}</th>
+        <th>Usuario: {{ userLog }}</th>
+
+    </tr>
+
+    </thead>
+
+</table>
+<form action="" method="POST">
+
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">Numero de cuenta destino</label>
+        <input type="text" class="form-control" placeholder="noCuenta" name="noCuenta" value={{noCuenta}}>
+    </fieldset>
+
+
+    <label for="formGroupExampleInput">Monto a transferir</label>
+    <input type="text" class="form-control" placeholder="monto" name="monto" value={{monto}}>
+    </fieldset>
+
+
+    </br>
+    </br>
+
+    <button type="submit" class="btn btn-danger" name="submit" value="Pagar">Transferir</button>
+
+</form>
+
+
+{% endblock %}

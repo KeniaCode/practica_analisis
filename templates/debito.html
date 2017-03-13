@@ -1,0 +1,43 @@
+{% extends "ingresado.html" %}
+{% block content %}
+
+<table class="table">
+    <thead class="thead-inverse">
+    <tr>
+        <th>5</th>
+        <th>Debito</th>
+        <th>No de cuenta: {{ cuentaLog }}</th>
+        <th>Usuario: {{ userLog }}</th>
+
+    </tr>
+
+    </thead>
+
+</table>
+<form action="" method="POST">
+
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">Numero de cuenta del usuario a debitar</label>
+        <input type="text" class="form-control" placeholder="noCuenta" name="noCuenta" value={{noCuenta}}>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">monto a debitar</label>
+        <input type="text" class="form-control" placeholder="monto" name="monto" value={{monto}}>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="formGroupExampleInput">Descriopcion del debito</label>
+        <input type="text" class="form-control" placeholder="descripcion" name="descripcion" value={{descripcion}}>
+    </fieldset>
+
+    </br>
+    </br>
+
+    <button type="submit" class="btn btn-danger" name="submit" value="acreditar">Acreditar</button>
+
+</form>
+
+
+{% endblock %}

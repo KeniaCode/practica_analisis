@@ -1,6 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, jsonify, json
-from flask_restful import Resource, Api
-from flask_restful import reqparse
+from flask import Flask, render_template, request, json
 from flaskext.mysql import MySQL
 
 mysql = MySQL()
@@ -11,8 +9,6 @@ app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
 app.config['MYSQL_DATABASE_DB'] = 'mydb'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
-api = Api(app)
-
 
 @app.route('/showLogin')
 def showLogin():
