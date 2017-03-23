@@ -21,87 +21,85 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
 <body>
 
-<div id="wrapper">
+    <div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="/testing">
-                    Usuario
-                </a>
-            </li>
-            <li>
-                <a href="#">CATALOGO</a>
-            </li>
-            <li>
-                <a href="/pagoServicios">Pago de Servicios</a>
-            </li>
-            <li>
-                <a href="/transferencias">Transferencias electronicas</a>
-            </li>
-            <li>
-                <a href="/consultarSaldo">Consultar saldo</a>
-            </li>
-            <li>
-                <a href="/credito">Credito</a>
-            </li>
-            <li>
-                <a href="/debito">Debito</a>
-            </li>
-            <li>
-                <a href="/punitarias">unitarias</a>
-            </li>
-            <li>
-                <a href="/pcarga">carga</a>
-            </li>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/testing">
+                        Usuario
+                    </a>
+                </li>
+                <li>
+                    <a href="#">CATALOGO</a>
+                </li>
+                <li>
+                    <a href="/pagoServicios">Pago de Servicios</a>
+                </li>
+                <li>
+                    <a href="/transferencias">Transferencias electronicas</a>
+                </li>
+                <li>
+                    <a href="/consultarSaldo">Consultar saldo</a>
+                </li>
+                <li>
+                    <a href="/credito">Credito</a>
+                </li>
+                <li>
+                    <a href="/debito">Debito</a>
+                </li>
+                <li>
+                    <a href="/punitarias">unitarias</a>
+                </li>
+                <li>
+                    <a href="/pcarga">carga</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Banco</h1>
-                    {% block content %}
-                    {% endblock %}
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Banco</h1> 
+                        {% block content %}
+                        {% endblock %}
 
 
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
-    <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
 
-</div>
-<!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
 
-<!-- jQuery -->
-<script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
-
-<!-- Menu Toggle Script -->
-<script>
+    <!-- Menu Toggle Script -->
+    <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-
-
-</script>
+    </script>
 
 </body>
 
