@@ -1,0 +1,60 @@
+from unittest import TestCase
+
+from flask import Flask, render_template, redirect, url_for, request, jsonify, json, flash
+from flask_restful import Resource, Api
+from flask_restful import reqparse
+from flaskext.mysql import MySQL
+
+
+mysql = MySQL()
+app = Flask(__name__)
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'mynewpassword'
+app.config['MYSQL_DATABASE_DB'] = 'mydb'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
+api = Api(app)
+
+
+class TestDebito(TestCase):
+    def testDebitoCorrecto(self):
+        cuentaLog = '1000000'
+        userLog = 'kcj'
+
+        try:
+            noCuenta = '1000045'
+            montoPago = '100'
+            descripcion = 'prueba unitaria de sp debito'
+
+            if noCuenta and montoPago:
+                # All Good, let's call MySQL
+                conn = mysql.connect()
+                cursor = conn.cursor()
+                cursor.callproc('sp_debito', (int(cuentaLog), float(montoPago), int(noCuenta), descripcion))
+                conn.commit()
+                print ("debito exitoso")
+
+        except Exception as e:
+            print("debito invalido")
+
+
+    def testDebitoInCorrecto(self):
+        cuentaLog = '1'
+        userLog = 'kcj'
+
+        try:
+            noCuenta = '10000021'
+            montoPago = '0'
+            descripcion = 'prueba unitaria de sp debito'
+
+            if noCuenta and montoPago:
+                # All Good, let's call MySQL
+                conn = mysql.connect()
+                cursor = conn.cursor()
+                cursor.callproc('sp_debito', (int(cuentaLog), float(montoPago), int(noCuenta), descripcion))
+                conn.commit()
+                print ("debito exitoso")
+
+        except Exception as e:
+            print("debito invalido")
