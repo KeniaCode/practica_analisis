@@ -1,14 +1,11 @@
 import unittest
 from unittest import TestCase
-
-from flask import Flask, render_template, redirect, url_for, request, jsonify, json, flash
-from flask_restful import Resource, Api
-from flask_restful import reqparse
+from practica2AyD import app
+from flask_restful import Api
 from flaskext.mysql import MySQL
 
 
 mysql = MySQL()
-app = Flask(__name__)
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'mynewpassword'
