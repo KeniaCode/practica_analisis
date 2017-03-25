@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 import practica2AyD
 from practica2AyD import login
@@ -55,3 +56,5 @@ class TestLogin(TestCase):
         else:
             print ("usuario correcto")
 
+if __name__ == '__main__':
+    unittest.main()

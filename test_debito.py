@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 
 from flask import Flask, render_template, redirect, url_for, request, jsonify, json, flash
@@ -58,3 +59,7 @@ class TestDebito(TestCase):
 
         except Exception as e:
             print("debito invalido")
+
+
+if __name__ == '__main__':
+    unittest.main()

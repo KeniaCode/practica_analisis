@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 import practica2AyD
 from practica2AyD import login
@@ -68,3 +69,6 @@ class TestPagoServicios(TestCase):
         except Exception as e:
             print("ERROR")
             return json.dumps({'error': str(e)})
+
+if __name__ == '__main__':
+    unittest.main()

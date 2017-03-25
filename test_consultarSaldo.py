@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 import practica2AyD
 from practica2AyD import login
@@ -65,3 +66,8 @@ class TestSaldo(TestCase):
 
         except Exception as e:
             print("ERROR")
+
+
+
+if __name__ == '__main__':
+    unittest.main()

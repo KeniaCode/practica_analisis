@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 
 from flask import Flask, render_template, redirect, url_for, request, jsonify, json, flash
@@ -54,4 +55,5 @@ class TestTransferencias(TestCase):
             print("ERROR en la transferencia")
 
 
-
+if __name__ == '__main__':
+    unittest.main()

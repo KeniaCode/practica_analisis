@@ -1,3 +1,4 @@
+import unittest
 from unittest import TestCase
 import practica2AyD
 from practica2AyD import login
@@ -66,3 +67,6 @@ class TestRegistro(TestCase):
                 print("registro FALLIDO")
             else:
                 print("registro EXITOSO")
+
+if __name__ == '__main__':
+    unittest.main()
