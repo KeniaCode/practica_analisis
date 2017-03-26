@@ -1,7 +1,6 @@
 import unittest
 from unittest import TestCase
 from practica2AyD import app
-
 from flask import json
 from flask_restful import Api
 from flaskext.mysql import MySQL
