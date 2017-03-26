@@ -1,10 +1,12 @@
 import unittest
 from unittest import TestCase
-from practica2AyD import app
+from flask import Flask
+from flask import json
 from flask_restful import Api
 from flaskext.mysql import MySQL
 
 mysql = MySQL()
+app = Flask(__name__)
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
