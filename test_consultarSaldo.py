@@ -18,7 +18,7 @@ api = Api(app)
 class TestSaldo(TestCase):
     def testSaldoCorrecto(self):
         try:
-            noCuenta = 1000045
+            noCuenta = 1000000
 
             # valida que los campos esten declarados
             if noCuenta:
@@ -60,7 +60,7 @@ class TestSaldo(TestCase):
                 return json.dumps({'html': '<span>Enter the required fields</span>'})
 
         except Exception as e:
-            print("ERROR")
+            print("ERROR en obtener el saldo")
 
 
 
