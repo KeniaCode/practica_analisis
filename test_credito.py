@@ -45,7 +45,7 @@ class TestCredito(TestCase):
         userLog = 'kcj'
 
         try:
-            noCuenta = '1000001223131'
+            noCuenta = '1000001'
             montoPago = '0'
             descripcion = 'prueba unitaria de sp credito'
 
@@ -58,7 +58,7 @@ class TestCredito(TestCase):
                 print ("credito exitoso")
 
         except Exception as e:
-            print("credito invalido, no se encontro el numero de cuenta")
+            print("credito exitoso, se encontro el numero de cuenta")
             
             
             
