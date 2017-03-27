@@ -23,7 +23,7 @@ class TestPagoServicios(TestCase):
         try:
             cuentaIngresado= 1000000
             tipo = 'Agua'
-            noCuenta = 1000006
+            noCuenta = 1000001
             montoPago = 0
             # valida que los campos esten declarados
             if noCuenta and montoPago:
@@ -36,11 +36,11 @@ class TestPagoServicios(TestCase):
 
 
             else:
-                return json.dumps({'html': '<span>Enter the required fields</span>'})
+                print("ERROR - No se tipo de servicio")
 
         except Exception as e:
             print("ERROR")
-            return json.dumps({'error': str(e)})
+            print("ERROR - No se tipo de servicio")
 
 
     def testPagoIncorrecto(self):
@@ -64,14 +64,14 @@ class TestPagoServicios(TestCase):
 
         except Exception as e:
             print("ERROR - No  se encontro cuenta destino")
-            return json.dumps({'error': str(e)})
+            print("ERROR - No se tipo de servicio")
         
         
     def testPagoInPago(self):
         try:
             cuentaIngresado = 10000000
             tipo = 'Agua'
-            noCuenta = 1002002
+            noCuenta = 1000002
             montoPago = 0
             # valida que los campos esten declarados
             if noCuenta and montoPago:
@@ -84,11 +84,11 @@ class TestPagoServicios(TestCase):
 
 
             else:
-                return json.dumps({'html': '<span>Enter the required fields</span>'})
+                print("ERROR - No se tipo de servicio")
 
         except Exception as e:
-            print("ERROR - No se tipo de servicio")
-            return json.dumps({'error': str(e)})
+            print("ERROR - No se encontro tipo de servicio")
+            
 
 if __name__ == '__main__':
     unittest.main()
