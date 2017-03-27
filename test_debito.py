@@ -18,7 +18,7 @@ api = Api(app)
 
 class TestDebito(TestCase):
     def testDebitoCorrecto(self):
-        print("********************** Unit Test - Credito")
+        print("********************** Unit Test - Debito")
         cuentaLog = '1000000'
         userLog = 'kcj'
 
