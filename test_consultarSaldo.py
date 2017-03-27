@@ -63,3 +63,5 @@ class TestSaldo(TestCase):
         except Exception as e:
             print("ERROR en obtener el saldo")
 
+if __name__ == '__main__':
+    unittest.main()
