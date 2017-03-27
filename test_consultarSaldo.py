@@ -19,6 +19,7 @@ api = Api(app)
 class TestSaldo(TestCase):
     def testSaldoCorrecto(self):
         try:
+            print("********** Unit Test - Consultar Saldo")
             noCuenta = 1000000
 
             # valida que los campos esten declarados
@@ -32,7 +33,7 @@ class TestSaldo(TestCase):
                 for row in data:
                     saldo = str(row[0])
 
-                print("Saldo: "+saldo)
+                print("Exito! Su Saldo: "+saldo)
 
             else:
                 return json.dumps({'html': '<span>Enter the required fields</span>'})
@@ -61,8 +62,8 @@ class TestSaldo(TestCase):
                 return json.dumps({'html': '<span>Enter the required fields</span>'})
 
         except Exception as e:
-            print("ERROR en obtener el saldo")
+            print("ERROR en obtener el saldo, no se encontro el numero de cuenta")
+            print("------------------------------")
 
 if __name__ == '__main__':
-    app.secret_key = 'some secret key'
-    app.run(debug=True)
+    unittest.main()
