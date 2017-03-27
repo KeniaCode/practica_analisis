@@ -59,7 +59,7 @@ class TestLogin(TestCase):
         print ("-----------Test Login Contrasena Incorrecta-------------")
         codigoI = '2'
         usuario = 'kcj'
-        contrasenia = 'kcj1'
+        contrasenia = 'kcjdasds1'
         if usuario and contrasenia:
             # All Good, let's call MySQL
             conn = mysql.connect()
