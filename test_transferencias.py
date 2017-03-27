@@ -22,7 +22,7 @@ class TestTransferencias(TestCase):
         userLog = 'kcj'
 
         noCuenta = '1000000'
-        montoPago = '2000'
+        montoPago = '0'
 
         try:
             if noCuenta and montoPago:
@@ -51,7 +51,7 @@ class TestTransferencias(TestCase):
                 print ("transferencia exitosa")
 
         except Exception as e:
-            print("ERROR en la transferencia")
+            print("ERROR en la transferencia - No se encontro cuenta destino")
 
 
 if __name__ == '__main__':

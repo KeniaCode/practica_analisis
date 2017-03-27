@@ -21,10 +21,11 @@ api = Api(app)
 class TestPagoServicios(TestCase):
     def testPagoCorrecto(self):
         try:
+            print("********************** Unit Test - Pago de servicios")
             cuentaIngresado= 1000000
             tipo = 'Agua'
-            noCuenta = 1000006
-            montoPago = 25
+            noCuenta = 1000001
+            montoPago = 0
             # valida que los campos esten declarados
             if noCuenta and montoPago:
                 # All Good, let's call MySQL
@@ -32,15 +33,14 @@ class TestPagoServicios(TestCase):
                 cursor = conn.cursor()
                 cursor.callproc('sp_pago_servicios', (int(cuentaIngresado), float(montoPago), int(noCuenta), tipo))
                 conn.commit()
-                print("Correcto")
+                print("Exito - Pago realizado correctamente")
 
 
             else:
-                return json.dumps({'html': '<span>Enter the required fields</span>'})
+                print("ERROR - No se encontro usuario")
 
         except Exception as e:
-            print("ERROR")
-            return json.dumps({'error': str(e)})
+            print("ERROR - No se tipo de capital")
 
 
     def testPagoIncorrecto(self):
@@ -63,8 +63,32 @@ class TestPagoServicios(TestCase):
                 return json.dumps({'html': '<span>Enter the required fields</span>'})
 
         except Exception as e:
-            print("ERROR")
-            return json.dumps({'error': str(e)})
+            print("ERROR - No  se encontro cuenta destino")
+            print("ERROR - No se tipo de servicio")
+        
+        
+    def testPagoInPago(self):
+        try:
+            cuentaIngresado = 10000000
+            tipo = 'Agua'
+            noCuenta = 1000002
+            montoPago = 0
+            # valida que los campos esten declarados
+            if noCuenta and montoPago:
+                # All Good, let's call MySQL
+                conn = mysql.connect()
+                cursor = conn.cursor()
+                cursor.callproc('sp_pago_servicios', (int(cuentaIngresado), float(montoPago), int(noCuenta), tipo))
+                conn.commit()
+                print("Correcto")
+
+
+            else:
+                print("ERROR - No se tipo de servicio")
+
+        except Exception as e:
+            print("ERROR - No se encontro tipo de servicio")
+            
 
 if __name__ == '__main__':
     unittest.main()
