@@ -19,12 +19,13 @@ api = Api(app)
 
 class TestCredito(TestCase):
     def testCreditoCorrecto(self):
+        print("********************** Unit Test - Credito")
         cuentaLog = '1000001'
         userLog = 'kcj'
 
         try:
-            noCuenta = '1000045'
-            montoPago = '400'
+            noCuenta = '1000000'
+            montoPago = '0'
             descripcion = 'prueba unitaria de sp credito'
 
             if noCuenta and montoPago:
@@ -57,7 +58,30 @@ class TestCredito(TestCase):
                 print ("credito exitoso")
 
         except Exception as e:
-            print("credito invalido")
+            print("credito invalido, no se encontro el numero de cuenta")
+            
+            
+            
+                def testCreditoInPago(self):
+        cuentaLog = '1'
+        userLog = 'kcj'
+
+        try:
+            noCuenta = '10000021'
+            montoPago = '0'
+            descripcion = 'prueba unitaria de sp credito'
+
+            if noCuenta and montoPago:
+                # All Good, let's call MySQL
+                conn = mysql.connect()
+                cursor = conn.cursor()
+                cursor.callproc('sp_credito', (int(cuentaLog), float(montoPago), int(noCuenta), descripcion))
+                conn.commit()
+                print ("credito exitoso")
+
+        except Exception as e:
+            print("credito invalido, no se cuenta con suficiente capital")
+            print("-------------------------------")
 
 if __name__ == '__main__':
     unittest.main()
