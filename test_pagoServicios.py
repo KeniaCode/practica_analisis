@@ -37,11 +37,10 @@ class TestPagoServicios(TestCase):
 
 
             else:
-                print("ERROR - No se tipo de servicio")
+                print("ERROR - No se encontro usuario")
 
         except Exception as e:
-            print("ERROR")
-            print("ERROR - No se tipo de servicio")
+            print("ERROR - No se tipo de capital")
 
 
     def testPagoIncorrecto(self):
