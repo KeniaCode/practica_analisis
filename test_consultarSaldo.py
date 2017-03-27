@@ -33,7 +33,7 @@ class TestSaldo(TestCase):
                 for row in data:
                     saldo = str(row[0])
 
-                print("Saldo: "+saldo)
+                print("Exito! Su Saldo: "+saldo)
 
             else:
                 return json.dumps({'html': '<span>Enter the required fields</span>'})
