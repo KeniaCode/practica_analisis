@@ -17,6 +17,8 @@ api = Api(app)
 
 class TestRegistro(TestCase):
     def testRegCorrecto(self):
+        print ("-----------Test Registro Correcto-------------")
+
         # Create Flask test client
         usuarioN = 'pepito2'
         nombreU = 'pepe2'
@@ -42,8 +44,10 @@ class TestRegistro(TestCase):
 
 
 
-    def testRegIncorrecto(self):
+    def testRegIncorrectoUsuario(self):
         # Create Flask test client
+        print ("-----------Test Registro Usuario Ya Existe-------------")
+
         usuarioN = 'kenia'
         nombreU = 'kenia'
         passU = '123456'
@@ -58,7 +62,29 @@ class TestRegistro(TestCase):
             conn.commit()
             # el procedimiento de sql retorno que no se contro al usuario
             if len(data) is 0:
-                print("registro FALLIDO")
+                print("Error, username ya existe")
+            else:
+                print("registro EXITOSO")
+
+    def testRegIncorrectoCorreo(self):
+        # Create Flask test client
+        print ("-----------Test Registro Correo Ya Existe-------------")
+
+        usuarioN = 'kenia'
+        nombreU = 'kenia'
+        passU = '123456'
+        emailU = 'kenia@gmail.com'
+        # valida que los campos esten declarados
+        if usuarioN and passU:
+            # All Good, let's call MySQL
+            conn = mysql.connect()
+            cursor = conn.cursor()
+            cursor.callproc('sp_registro', (usuarioN, passU, nombreU, emailU))
+            data = cursor.fetchall()
+            conn.commit()
+            # el procedimiento de sql retorno que no se contro al usuario
+            if len(data) is 0:
+                print("Error, correo ya existe")
             else:
                 print("registro EXITOSO")
 
