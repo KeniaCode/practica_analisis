@@ -62,7 +62,7 @@ class TestCredito(TestCase):
             
             
             
-                def testCreditoInPago(self):
+    def testCreditoInPago(self):
         cuentaLog = '1'
         userLog = 'kcj'
 
