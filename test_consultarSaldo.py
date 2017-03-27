@@ -63,6 +63,7 @@ class TestSaldo(TestCase):
 
         except Exception as e:
             print("ERROR en obtener el saldo, no se encontro el numero de cuenta")
+            print("------------------------------")
 
 if __name__ == '__main__':
     unittest.main()
