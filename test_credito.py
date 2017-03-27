@@ -45,7 +45,7 @@ class TestCredito(TestCase):
         userLog = 'kcj'
 
         try:
-            noCuenta = '10000021'
+            noCuenta = '1000001223131'
             montoPago = '0'
             descripcion = 'prueba unitaria de sp credito'
 
