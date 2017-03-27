@@ -70,7 +70,7 @@ class TestPagoServicios(TestCase):
     def testPagoInPago(self):
         try:
             cuentaIngresado = 10000000
-            tipo = 'Agua'
+            tipo = 'LIBROS'
             noCuenta = 1000002
             montoPago = 0
             # valida que los campos esten declarados
@@ -84,7 +84,7 @@ class TestPagoServicios(TestCase):
 
 
             else:
-                print("ERROR - No se tipo de servicio")
+                print("ERROR - No se encotro tipo de servicio")
 
         except Exception as e:
             print("ERROR - No se encontro tipo de servicio")
