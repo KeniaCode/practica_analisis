@@ -61,7 +61,7 @@ class TestDebito(TestCase):
             
             
             
-    def testDebitoInCorrecto(self):
+    def testDebitoInPago(self):
         cuentaLog = '1'
         userLog = 'kcj'
 
