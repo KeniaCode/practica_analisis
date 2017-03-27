@@ -24,7 +24,7 @@ class TestPagoServicios(TestCase):
             cuentaIngresado= 1000000
             tipo = 'Agua'
             noCuenta = 1000006
-            montoPago = 25
+            montoPago = 0
             # valida que los campos esten declarados
             if noCuenta and montoPago:
                 # All Good, let's call MySQL
@@ -32,7 +32,7 @@ class TestPagoServicios(TestCase):
                 cursor = conn.cursor()
                 cursor.callproc('sp_pago_servicios', (int(cuentaIngresado), float(montoPago), int(noCuenta), tipo))
                 conn.commit()
-                print("Correcto")
+                print("Exito - Pago realizado correctamente")
 
 
             else:
@@ -63,7 +63,31 @@ class TestPagoServicios(TestCase):
                 return json.dumps({'html': '<span>Enter the required fields</span>'})
 
         except Exception as e:
-            print("ERROR")
+            print("ERROR - No  se encontro cuenta destino")
+            return json.dumps({'error': str(e)})
+        
+        
+    def testPagoInPago(self):
+        try:
+            cuentaIngresado = 10000000
+            tipo = 'Agua'
+            noCuenta = 1002002
+            montoPago = 0
+            # valida que los campos esten declarados
+            if noCuenta and montoPago:
+                # All Good, let's call MySQL
+                conn = mysql.connect()
+                cursor = conn.cursor()
+                cursor.callproc('sp_pago_servicios', (int(cuentaIngresado), float(montoPago), int(noCuenta), tipo))
+                conn.commit()
+                print("Correcto")
+
+
+            else:
+                return json.dumps({'html': '<span>Enter the required fields</span>'})
+
+        except Exception as e:
+            print("ERROR - No se tipo de servicio")
             return json.dumps({'error': str(e)})
 
 if __name__ == '__main__':
