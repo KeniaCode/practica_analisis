@@ -21,6 +21,7 @@ api = Api(app)
 class TestPagoServicios(TestCase):
     def testPagoCorrecto(self):
         try:
+            print("********************** Unit Test - Pago de servicios")
             cuentaIngresado= 1000000
             tipo = 'Agua'
             noCuenta = 1000001
