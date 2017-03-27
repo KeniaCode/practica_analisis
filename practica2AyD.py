@@ -4,8 +4,7 @@ from flask_restful import reqparse
 from flaskext.mysql import MySQL
 
 
-mysql = MySQL()
-app = Flask(__name__)
+
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'mynewpassword'
