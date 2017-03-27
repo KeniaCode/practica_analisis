@@ -5,7 +5,8 @@ from flask import json
 from flask_restful import Api
 from flaskext.mysql import MySQL
 
-
+mysql = MySQL()
+app = Flask(__name__)
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
