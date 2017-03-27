@@ -64,4 +64,5 @@ class TestSaldo(TestCase):
             print("ERROR en obtener el saldo")
 
 if __name__ == '__main__':
-    unittest.main()
+    app.secret_key = 'some secret key'
+    app.run(debug=True)
