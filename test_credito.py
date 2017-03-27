@@ -59,3 +59,5 @@ class TestCredito(TestCase):
         except Exception as e:
             print("credito invalido")
 
+if __name__ == '__main__':
+    unittest.main()
